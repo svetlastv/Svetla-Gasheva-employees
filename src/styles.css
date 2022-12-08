@@ -1,0 +1,73 @@
+.container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formContainer {
+    width: 300px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer {
+    --defaultColor: #5d89dc;
+
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    border: 2px solid var(--defaultColor);
+}
+
+.inputContainer:after {
+    content: attr(datatext);
+    flex: 2;
+    padding: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--defaultColor);
+    background-color: white;
+}
+
+.inputContainer:before {
+    content: 'Upload';
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--defaultColor);
+}
+
+.inputContainer:hover:before {
+    opacity: 0.8;
+}
+
+input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dataGridContainer {
+    flex: 4;
+    width: 100%;
+}
