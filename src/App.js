@@ -36,8 +36,12 @@ function App() {
     };
 
     function getEmployeesPair(csvData) {
-        // removing first line(defined separator for csv file) 
-        var d = csvData.split('\n').slice(1);
+        // removing first line(defined separator for csv file)
+        var firstLine = csvData.split('\n')[0];
+        var d;
+        if (firstLine.includes('sep=')) {
+            d = csvData.split('\n').slice(1);
+        }
         var data = d.map(e => e.split(','));
         var daysWorkedTogether = {};
         var pairs = {};
